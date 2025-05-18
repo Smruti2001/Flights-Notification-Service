@@ -1,3 +1,4 @@
 module.exports = {
-    PingCheckController: require('./pingCheckController')
+    PingCheckController: require('./pingCheckController'),
+    EmailController: require('./emailController'),
 }
