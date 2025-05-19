@@ -1,6 +1,6 @@
 const { StatusCodes } = require('http-status-codes');
 
-const { Mailer } = require('../config');
+const Mailer = require('../config/emailConfig');
 const AppError = require('../utils/errors/appError');
 const { TicketRepository } = require('../repositories');
 
@@ -16,6 +16,7 @@ async function sendEmail(mailFrom, mailTo, subject, text) {
         });
         return response;
     } catch (error) {
+        console.log(error);
         throw new AppError(['Unable to send email at the moment'], StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }
